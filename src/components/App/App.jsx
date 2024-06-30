@@ -33,8 +33,8 @@ const App = () => {
     <div>
   <h1>Phonebook</h1>
   <ContactForm onAdd = {addContacts} />
-  <SearchBox value={rightFilter} onSearch={setFilter} /> 
-  <ContactList contacts={contacts} onDelete = {deleteContact} />
+  <SearchBox value={filter} onSearch={setFilter} /> 
+  <ContactList contacts={rightFilter} onDelete = {deleteContact} />
 </div>
     )
 
