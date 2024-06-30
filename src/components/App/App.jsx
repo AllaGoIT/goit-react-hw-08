@@ -26,12 +26,14 @@ const App = () => {
     }))
   };
   
-    const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
+  
+  const rightFilter = contacts.filter((contact) => contact.name.toLowerCase().includes(filter.toLowerCase()));
     return (
     <div>
   <h1>Phonebook</h1>
   <ContactForm onAdd = {addContacts} />
-  <SearchBox value = {filter} onSearch = {setFilter} /> 
+  <SearchBox value={rightFilter} onSearch={setFilter} /> 
   <ContactList contacts={contacts} onDelete = {deleteContact} />
 </div>
     )
