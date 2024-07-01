@@ -2,7 +2,7 @@
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import initialContacts from "../../contacts.json"
 
@@ -10,13 +10,25 @@ import initialContacts from "../../contacts.json"
 
 const App = () => {
 
-  const [contacts, setContacts] = useState(initialContacts);
+  const [contacts, setContacts] = useState(() => {
+  
+    const savedContacts = window.localStorage.getItem("setContacts");
+
+    if (savedContacts !== null) {
+      return savedContacts;
+    }
+    return initialContacts;
+  });
   
   const addContacts = (newContact) => { 
     setContacts((prevContacts) => {
       return[...prevContacts, newContact]
     })
   };
+  useEffect(() => {
+    window.localStorage.setItem("setContacts",JSON.stringify(contacts))
+   },[contacts]);
+
   const deleteContact = (contactId) => {
     setContacts((prevContacts => {
 
