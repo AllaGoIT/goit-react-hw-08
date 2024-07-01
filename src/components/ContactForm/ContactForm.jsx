@@ -7,7 +7,7 @@ import { useId } from "react";
 
 const initialContacts = {
      name: "",
-     number: "" 
+     number: "" ,
 }
 
 
@@ -18,23 +18,18 @@ const ContactForm = (onAdd) => {
 
 
 const handleSubmit = (values, actions) => {
-    console.log(values);
-    // const name = initialContacts.text.value;
-    onAdd({
-        actions, id: nanoid()
-        // id:Date.now(),
-        // name: actions.target.elements.text.value,
-
-    });
+ 
+    onAdd({...values, id: nanoid()});
     actions.resetForm();
- };
+};
+
     return (
         <Formik initialValues={initialContacts} onSubmit={()=>{handleSubmit}}>
             <Form>
                 <label htmlFor={nameFildId}> Name </label>
-                <Field type="text" name="Name" id = {nameFildId}></Field>
+                <Field type="text" name="name" id = {nameFildId}></Field>
                 <label htmlFor={numberFildId}>Number</label>
-                <Field type = "text" name = "Number" id ={numberFildId}></Field>
+                <Field type = "text" name = "number" id ={numberFildId}></Field>
                 <button type = "submit">Add contact</button>
             </Form>
         
@@ -44,3 +39,6 @@ const handleSubmit = (values, actions) => {
     )
 };
 export default ContactForm;
+
+        // id:Date.now(),
+        // name: actions.target.elements.text.value,
