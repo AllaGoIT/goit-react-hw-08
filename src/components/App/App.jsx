@@ -1,6 +1,4 @@
 
-// import * as Yup from "yup";
-// import { ErrorMessage } from "formik";
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
