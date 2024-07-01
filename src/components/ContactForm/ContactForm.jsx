@@ -2,6 +2,7 @@ import { Formik, Form, Field } from "formik";
 // import { DateSchema } from "yup";
 import { nanoid } from 'nanoid';
 import { useId } from "react";
+// import { number } from "yup";
 
 
 const initialContacts = {
@@ -31,9 +32,9 @@ const handleSubmit = (values, actions) => {
         <Formik initialValues={initialContacts} onSubmit={()=>{handleSubmit}}>
             <Form>
                 <label htmlFor={nameFildId}> Name </label>
-                <Field type="text" name="Name"></Field>
+                <Field type="text" name="Name" id = {nameFildId}></Field>
                 <label htmlFor={numberFildId}>Number</label>
-                <Field type = "text" name = "Number"></Field>
+                <Field type = "text" name = "Number" id ={numberFildId}></Field>
                 <button type = "submit">Add contact</button>
             </Form>
         
