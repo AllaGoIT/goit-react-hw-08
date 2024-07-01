@@ -13,6 +13,7 @@ import initialContacts from "../../contacts.json"
 const App = () => {
 
   const [contacts, setContacts] = useState(initialContacts);
+  
   const addContacts = (newContact) => { 
     setContacts((prevContacts) => {
       return[...prevContacts, newContact]
