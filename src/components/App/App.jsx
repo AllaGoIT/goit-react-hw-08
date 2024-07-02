@@ -15,19 +15,21 @@ const App = () => {
     const savedContacts = window.localStorage.getItem("setContacts");
 
     if (savedContacts !== null) {
-      return savedContacts;
+      return JSON.parse(savedContacts)
     }
-    return initialContacts;
-  });
+    return initialContacts
+  })
+
+    useEffect(() => {
+    window.localStorage.setItem("setContacts", JSON.stringify(contacts))
+   },[contacts]);
   
   const addContacts = (newContact) => { 
     setContacts((prevContacts) => {
       return[...prevContacts, newContact]
     })
   };
-  useEffect(() => {
-    window.localStorage.setItem("setContacts",JSON.stringify(contacts))
-   },[contacts]);
+
 
   const deleteContact = (contactId) => {
     setContacts((prevContacts => {
