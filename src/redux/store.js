@@ -1,40 +1,37 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore, persistReduser } from "redux-persist";
+import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { contactsReducer } from "./contactSlice.js";
 import { filterReducer } from "./filterSlice.js";
 
+const persistConfig = {
+  key: "contacts", // balance
+  storage,
+};
+const persistContactsReducer = persistReducer(persistConfig, contactsReducer);
+
 export const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
+    contacts: persistContactsReducer,
     filter: filterReducer,
   },
 });
 
-// const persistConfig = {
-//   key: "root", // balance
-//   storage,
-// };
-
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 // const initionalState = {
-//   balance: {
-//     value: 0,
+//   contacts: {
+//     items: [],
 //   },
 // };
 // const rootReducer = (state = initionalState, action) => {
 //   switch (action.type) {
-
 //     case "type action dispatch": {
 //       return {
-//         balance: {
-//           value: state.balance.value + action.payload // from dispatch actions
-//         }
-//     }
-//       }
+//         contacts: {
+//           items: state.contacts + action.payload, // from dispatch actions
+//         },
+//       };
 //     }
 //     default:
 //       return state;
