@@ -13,6 +13,18 @@ import storage from "redux-persist/lib/storage";
 import { contactsReducer } from "./contactSlice.js";
 import { filterReducer } from "./filterSlice.js";
 
+// export const deleteContact = (contactId) => {
+//   return {
+//     type: "contacts/deleteContacts",
+//     payload: "contactId",
+//   };
+// };
+
+//     return prevContacts.filter((contact) => contact.id !== contactId)
+
+//   }))
+// };
+
 const persistConfig = {
   key: "contacts",
   storage,

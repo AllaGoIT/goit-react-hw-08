@@ -1,28 +1,27 @@
 import { FaUser } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import css from "./Contact.module.css";
-// import { useDispatch, useSelector } from "react-redux";
-// import { deleteContact } from "../../redux/contactSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteContact } from "../../redux/contactSlice";
 
-const Contact = ({ data: { id, name, number }, onDelete }) => {
+const Contact = () => {
+  const name = useSelector((state) => state.name);
+  const number = useSelector((state) => state.contacts.items.number);
+  const id = useSelector((state) => state.contacts.items.id);
+  const dispatch = useDispatch();
+
+  const handleDelete = () => dispatch(deleteContact(id));
   return (
     <div className={css.container}>
       <div>
         <p className={css.text}>
-          {" "}
           <FaUser /> {name}
         </p>
         <p className={css.text}>
-          {" "}
           <FaPhone /> {number}
         </p>
       </div>
-      <button
-        className={css.btn}
-        onClick={() => {
-          onDelete(id);
-        }}
-      >
+      <button className={css.btn} onClick={handleDelete}>
         Delete
       </button>
     </div>
