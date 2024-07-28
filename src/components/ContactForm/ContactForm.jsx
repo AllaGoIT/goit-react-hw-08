@@ -27,22 +27,12 @@ const ContactForm = () => {
   const nameFildId = useId();
   const numberFildId = useId();
   const dispatch = useDispatch();
-  // const name = useSelector((state) => state.name);
-  // const number = useSelector((state) => state.contacts.items.number);
-  // const id = useSelector((state) => state.contacts.items.id);
 
-  // const handleSubmit = () => dispatch(addContact(name, number));
   const handleSubmit = (values, actions) => {
     dispatch(addContact({ ...values, id: nanoid() }));
     actions.resetForm();
   };
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   dispatch(addContact(form.elements.initialContacts));
 
-  //   form.reset();
-  // };
   return (
     <Formik
       initialValues={initialContacts}
@@ -74,6 +64,3 @@ const ContactForm = () => {
   );
 };
 export default ContactForm;
-
-// id:Date.now(),
-// name: actions.target.elements.text.value,

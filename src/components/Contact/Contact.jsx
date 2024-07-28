@@ -26,17 +26,3 @@ const Contact = ({ data: { name, number, id } }) => {
 };
 
 export default Contact;
-
-// const Contact = ({ data: { id, name, number }, onDelete }) => {
-//     return (
-//         <div className={css.container}>
-//             <div>
-//             <p className={css.text}> <FaUser/> {name}</p>
-//             <p className={css.text}> <FaPhone /> {number}</p>
-//             </div>
-//              <button className={css.btn} onClick={() => { onDelete(id) }}>Delete</button>
-//         </div>
-//     )
-//  };
-
-// export default Contact;

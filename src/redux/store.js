@@ -13,18 +13,6 @@ import storage from "redux-persist/lib/storage";
 import { contactsReducer } from "./contactsSlice.js";
 import { filterReducer } from "./filtersSlice.js";
 
-// export const deleteContact = (contactId) => {
-//   return {
-//     type: "contacts/deleteContacts",
-//     payload: "contactId",
-//   };
-// };
-
-//     return prevContacts.filter((contact) => contact.id !== contactId)
-
-//   }))
-// };
-
 const persistConfig = {
   key: "contacts",
   storage,
@@ -46,22 +34,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// const initionalState = {
-//   contacts: {
-//     items: [],
-//   },
-// };
-// const rootReducer = (state = initionalState, action) => {
-//   switch (action.type) {
-//     case "type action dispatch": {
-//       return {
-//         contacts: {
-//           items: state.contacts + action.payload, // from dispatch actions
-//         },
-//       };
-//     }
-//     default:
-//       return state;
-//   }
-// };

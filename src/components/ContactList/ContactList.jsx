@@ -22,15 +22,3 @@ const ContactList = () => {
   );
 };
 export default ContactList;
-
-// const ContactList = ({ contacts, onDelete }) => {
-//   return (
-//     <ul className={css.ulList}>
-//       {contacts.map((contact) => (
-//         <li className={css.list} key={contact.id}>
-//           <Contact data={contact} onDelete={onDelete} />
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// };
