@@ -24,8 +24,8 @@ const initialContacts = {
 };
 
 const ContactForm = () => {
-  const nameFildId = useId();
-  const numberFildId = useId();
+  const nameFieldId = useId();
+  const numberFieldId = useId();
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
@@ -40,20 +40,20 @@ const ContactForm = () => {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
-        <label htmlFor={nameFildId}> Name </label>
+        <label htmlFor={nameFieldId}> Name </label>
         <Field
           className={css.field}
           type="text"
           name="name"
-          id={nameFildId}
+          id={nameFieldId}
         ></Field>
         <ErrorMessage className={css.span} name="name" component="span" />
-        <label htmlFor={numberFildId}>Number</label>
+        <label htmlFor={numberFieldId}>Number</label>
         <Field
           className={css.field}
           type="text"
           name="number"
-          id={numberFildId}
+          id={numberFieldId}
         ></Field>
         <ErrorMessage className={css.span} name="number" component="span" />
         <button className={css.btn} type="submit">
