@@ -3,11 +3,9 @@ import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
 import { fetchContacts } from "../../redux/contactsOps";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectLoading } from "../../redux/contactsSlice";
-
-axios.defaults.baseURL = "https://66ab40ac636a4840d7c9e06f.mockapi.io";
+import { refresh } from "../../redux/auth/operations";
 
 const App = () => {
   const isLoding = useSelector(selectLoading);
