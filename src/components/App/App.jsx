@@ -1,13 +1,15 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./Layout/Layout";
+import Layout from "../LayOut/LayOut";
 
-const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
-  import("../pages/RegistrationPage/RegistrationPage")
+  import("../../pages/RegistrationPage/RegistrationPage")
 );
-const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
-const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
+const ContactsPage = lazy(() =>
+  import("../../pages/ContactsPage/ContactsPage")
+);
 
 export default function App() {
   return (
@@ -25,15 +27,13 @@ export default function App() {
 }
 
 // import { useEffect } from "react";
-// import ContactForm from "../ContactForm/ContactForm";
-// import ContactList from "../ContactList/ContactList";
+
 // import SearchBox from "../SearchBox/SearchBox";
 // import { fetchContacts } from "../../redux/contacts/operations";
 // import { useDispatch } from "react-redux";
 // // import { selectError, selectLoading } from "../../redux/contacts/selectors";
 // import { refresh } from "../../redux/auth/operations";
-// import RegistrationForm from "../RegistrationForm/RegistrationForm";
-// import LoginForm from "../LoginForm/LoginForm";
+
 // // import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 // // import css from "./App.module.css";
 // import Navigation from "../Navigation/Navigation";
