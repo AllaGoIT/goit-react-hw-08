@@ -8,10 +8,16 @@ import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { refresh } from "../../redux/auth/operations";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
 import LoginForm from "../LoginForm/LoginForm";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import css from "./App.module.css";
+import Navigation from "../Navigation/Navigation";
+
+import UserMenu from "../UserMenu/UserMenu";
 
 const App = () => {
   const isLoding = useSelector(selectLoading);
   const isError = useSelector(selectError);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContacts());
@@ -22,6 +28,9 @@ const App = () => {
 
   return (
     <div>
+      <header className={css.header}>
+        {isLoggedIn ? <UserMenu /> : <Navigation />}
+      </header>
       <h1>Phonebook</h1>
       {isLoding && <p>Loading contact...</p>}
       {isError && <p>Error massage</p>}
