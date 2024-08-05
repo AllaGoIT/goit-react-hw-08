@@ -1,0 +1,29 @@
+.hederNav {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #000;
+}
+.containerLog {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 15px;
+  border-bottom: 3px;
+}
+
+.textHome {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+.containerLog {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+/* .line {
+  direction: horysontal;
+} */
