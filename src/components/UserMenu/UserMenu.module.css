@@ -24,6 +24,12 @@
   font-size: medium;
 }
 
-/* .line {
-  direction: horysontal;
-} */
+.text {
+  color: #000;
+  text-decoration: none;
+}
+
+.textHome {
+  color: #000;
+  text-decoration: none;
+}

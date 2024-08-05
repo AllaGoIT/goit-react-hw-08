@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  width: 300px;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: larger;
+  margin-bottom: 50px;
+}
