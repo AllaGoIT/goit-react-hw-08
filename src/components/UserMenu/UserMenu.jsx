@@ -13,7 +13,7 @@ export default function UserMenu() {
     <div className={css.wrapper}>
       <nav>
         <header className={css.hederNav}>
-          <Link className={css.textHome} to="/">
+          <Link className={css.textHome} to="./">
             Home
           </Link>
           {/* <p className={css.textHome}>Home</p> */}
