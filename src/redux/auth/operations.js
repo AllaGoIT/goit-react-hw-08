@@ -46,6 +46,8 @@ export const logout = createAsyncThunk(
 );
 
 export const refresh = createAsyncThunk("auth/refresh", async (_, thunkAPI) => {
+  const reduxState = thunkAPI.getState();
+  setAuthHeader(reduxState.auth.token);
   try {
     const response = await axios.get("/users/current");
     return response.data;
