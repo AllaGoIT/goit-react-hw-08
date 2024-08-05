@@ -1,10 +1,12 @@
+import css from "./HomePage.module.css";
+
 export default function HomePage() {
   return (
     <div>
-      <h1>About Me</h1>
-      <h2>Fullstack Developer</h2>
+      <h1 className={css.h1}>About Me</h1>
+      <h2 className={css.h2}>Fullstack Developer</h2>
 
-      <p>
+      <p className={css.p}>
         My name is Alla Danylchenko and I am a creative fullstack developer, I
         love to create sites for people. My projects are meant to provide
         products with a home that is both expressive and functional, a container

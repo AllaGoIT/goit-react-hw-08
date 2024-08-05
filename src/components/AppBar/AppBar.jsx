@@ -9,7 +9,6 @@ export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    // <header className={css.header}>
     <header>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
