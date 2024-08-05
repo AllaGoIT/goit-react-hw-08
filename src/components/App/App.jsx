@@ -6,6 +6,8 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { refresh } from "../../redux/auth/operations";
+import RegistrationForm from "../RegistrationForm/RegistrationForm";
+import LoginForm from "../LoginForm/LoginForm";
 
 const App = () => {
   const isLoding = useSelector(selectLoading);
@@ -13,6 +15,9 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContacts());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(refresh());
   }, [dispatch]);
 
   return (
@@ -23,6 +28,8 @@ const App = () => {
       <ContactForm />
       <SearchBox />
       <ContactList />
+      <RegistrationForm />
+      <LoginForm />
     </div>
   );
 };
