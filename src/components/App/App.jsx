@@ -1,7 +1,8 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../LayOut/LayOut";
-import { RestrictedRoute } from "react-icons/fa6";
+import { RestrictedRoute } from "../RestrictedRoute.jsx";
+import { PrivateRoute } from "../PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import { refresh } from "../../redux/auth/operations";
@@ -52,11 +53,7 @@ export default function App() {
           <Route
             path="/contacts"
             element={
-              <RestrictedRoute
-                component={<ContactsPage />}
-                redirect
-                To="/login"
-              />
+              <PrivateRoute component={<ContactsPage />} redirect To="/login" />
             }
           />
         </Routes>
