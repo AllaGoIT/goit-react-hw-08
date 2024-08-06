@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.linkCont {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
