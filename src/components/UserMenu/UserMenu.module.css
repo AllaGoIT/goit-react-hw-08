@@ -1,16 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #000;
+  height: 30px;
+}
+
 .hederNav {
   display: flex;
   flex-direction: row;
   gap: 12px;
-  border-bottom: 2px solid #000;
+  margin-bottom: 0px;
 }
+
 .containerLog {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  margin-left: auto;
-  margin-right: 15px;
-  border-bottom: 3px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
@@ -19,4 +21,18 @@
 .text {
   color: #000;
   text-decoration: none;
+}
+
+.username {
+  margin-left: auto;
+  margin-right: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.btn {
+  height: 20px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
 }

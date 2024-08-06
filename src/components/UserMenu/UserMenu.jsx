@@ -16,20 +16,22 @@ export default function UserMenu() {
           <Link className={css.text} to="/">
             Home
           </Link>
-          <Link className={css.text} to="/register">
-            Register
-          </Link>
-          <Link className={css.text} to="/login">
-            LogIn
+
+          <Link className={css.text} to="/contacts">
+            Contacts
           </Link>
         </header>
       </nav>
-      <p className={css.username}>Welcome{user}</p>
-      {user !== 0 && (
-        <button type="button" onClick={() => dispatch(logout())}>
-          Logout
-        </button>
-      )}
+
+      <p className={css.username}>Welcome {user.name}</p>
+
+      <button
+        className={css.btn}
+        type="button"
+        onClick={() => dispatch(logout())}
+      >
+        Logout
+      </button>
     </div>
   );
 }
