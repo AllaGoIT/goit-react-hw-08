@@ -45,13 +45,22 @@ export const logout = createAsyncThunk(
   }
 );
 
-export const refresh = createAsyncThunk("auth/refresh", async (_, thunkAPI) => {
-  const reduxState = thunkAPI.getState();
-  setAuthHeader(reduxState.auth.token);
-  try {
-    const response = await axios.get("/users/current");
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.massage);
+export const refresh = createAsyncThunk(
+  "auth/refresh",
+  async (_, thunkAPI) => {
+    const reduxState = thunkAPI.getState();
+    setAuthHeader(reduxState.auth.token);
+    try {
+      const response = await axios.get("/users/current");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.massage);
+    }
+  },
+  {
+    condition: (_, thunkAPI) => {
+      const reduxState = thunkAPI.getState();
+      return reduxState.auth.token !== null;
+    },
   }
-});
+);

@@ -15,7 +15,7 @@ import {
 import storage from "redux-persist/lib/storage";
 
 const authPersistConfig = {
-  key: "users",
+  key: "auth",
   storage: storage,
   whitelist: ["token"],
 };
