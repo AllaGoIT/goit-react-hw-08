@@ -11,6 +11,7 @@ export default function Novigation() {
     <NavLink className={css.link} to="/">
       Home
     </NavLink>
+
     {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
   </nav>;
 }

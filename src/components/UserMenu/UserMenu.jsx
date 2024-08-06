@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors";
 import css from "./UserMenu.module.css";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -11,19 +11,19 @@ export default function UserMenu() {
 
   return (
     <div className={css.wrapper}>
-      <nav className={css.containerLog}>
-        <header className={css.hederNav}>
+      {/* <nav className={css.containerLog}>
+        {/* <header className={css.hederNav}>
           <Link className={css.text} to="/">
             Home
-          </Link>
+          </Link> */}
 
-          <Link className={css.text} to="/contacts">
+      {/* <Link className={css.text} to="/contacts">
             Contacts
-          </Link>
-        </header>
-      </nav>
+          </Link> */}
+      {/* </header> */}
+      {/* </nav> */}
 
-      <p className={css.username}>Welcome {user.name}</p>
+      <p className={css.username}>Welcome, {user.name}</p>
 
       <button
         className={css.btn}
