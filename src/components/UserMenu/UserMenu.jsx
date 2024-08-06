@@ -11,18 +11,6 @@ export default function UserMenu() {
 
   return (
     <div className={css.wrapper}>
-      {/* <nav className={css.containerLog}>
-        {/* <header className={css.hederNav}>
-          <Link className={css.text} to="/">
-            Home
-          </Link> */}
-
-      {/* <Link className={css.text} to="/contacts">
-            Contacts
-          </Link> */}
-      {/* </header> */}
-      {/* </nav> */}
-
       <p className={css.username}>Welcome, {user.name}</p>
 
       <button

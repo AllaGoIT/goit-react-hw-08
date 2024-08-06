@@ -14,7 +14,6 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(register.pending, (state) => {
-        // state.user = true;
         state.token = true;
       })
 
@@ -33,7 +32,6 @@ const authSlice = createSlice({
       })
 
       .addCase(login.pending, (state) => {
-        // state.user = true;
         state.token = true;
         state.isLoggedIn = true;
       })
@@ -53,7 +51,6 @@ const authSlice = createSlice({
       })
 
       .addCase(logout.pending, (state) => {
-        // state.user = true;
         state.token = true;
       })
 
@@ -67,7 +64,6 @@ const authSlice = createSlice({
       })
 
       .addCase(logout.rejected, (state) => {
-        // state.user = true;
         state.isLoggedIn = true;
       })
 
