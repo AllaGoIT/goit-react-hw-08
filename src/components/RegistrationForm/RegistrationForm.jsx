@@ -3,11 +3,13 @@ import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import css from "./RegistrationForm.module.css";
 import * as Yup from "yup";
-// import { nanoid } from "nanoid";
-// import { useId } from "react";
+import { ErrorMessage } from "formik";
 
 const FeedbackSchema = Yup.object().shape({
-  name: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required(),
+  name: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
   email: Yup.string().email("Must be a valid email!").required("Required"),
   password: Yup.string()
     .min(7, "Too Short!")
@@ -35,16 +37,19 @@ export default function RegistrationForm() {
     >
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>
-          Username
+          Name
           <Field className={css.field} type="text" name="name" />
+          <ErrorMessage className={css.span} name="name" component="span" />
         </label>
         <label className={css.label}>
           Email
           <Field className={css.field} type="email" name="email" />
+          <ErrorMessage className={css.span} name="email" component="span" />
         </label>
         <label className={css.label}>
           Password
           <Field className={css.field} type="password" name="password" />
+          <ErrorMessage className={css.span} name="password" component="span" />
         </label>
         <button className={css.btn} type="submit">
           Register
