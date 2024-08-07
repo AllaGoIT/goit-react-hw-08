@@ -2,6 +2,18 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import css from "./RegistrationForm.module.css";
+import * as Yup from "yup";
+// import { nanoid } from "nanoid";
+// import { useId } from "react";
+
+const FeedbackSchema = Yup.object().shape({
+  name: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required(),
+  email: Yup.string().email("Must be a valid email!").required("Required"),
+  password: Yup.string()
+    .min(7, "Too Short!")
+    .max(50, "To Long!")
+    .required("Required"),
+});
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
@@ -19,6 +31,7 @@ export default function RegistrationForm() {
         password: "",
       }}
       onSubmit={handleSubmit}
+      validationSchema={FeedbackSchema}
     >
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>

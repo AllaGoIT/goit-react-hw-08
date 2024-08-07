@@ -13,9 +13,6 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
-        state.token = true;
-      })
 
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -23,35 +20,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
 
-      .addCase(register.rejected, (state) => {
-        state.user.name = null;
-        state.user.email = null;
-        state.token = null;
-        state.isLoggedIn = false;
-        state.isRefreshing = false;
-      })
-
-      .addCase(login.pending, (state) => {
-        state.token = true;
-        state.isLoggedIn = true;
-      })
-
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-      })
-
-      .addCase(login.rejected, (state) => {
-        state.user.name = null;
-        state.user.email = null;
-        state.token = null;
-        state.isLoggedIn = false;
-        state.isRefreshing = false;
-      })
-
-      .addCase(logout.pending, (state) => {
-        state.token = true;
       })
 
       .addCase(logout.fulfilled, (state) => {
@@ -63,12 +35,7 @@ const authSlice = createSlice({
         state.isLoggedIn = false;
       })
 
-      .addCase(logout.rejected, (state) => {
-        state.isLoggedIn = true;
-      })
-
       .addCase(refresh.pending, (state) => {
-        state.token = true;
         state.isRefreshing = true;
       })
 
@@ -80,7 +47,6 @@ const authSlice = createSlice({
 
       .addCase(refresh.rejected, (state) => {
         state.isRefreshing = false;
-        state.token = false;
       });
   },
 });
