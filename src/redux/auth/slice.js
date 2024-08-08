@@ -40,9 +40,9 @@ const authSlice = createSlice({
       })
 
       .addCase(refresh.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.user = action.payload;
         state.isRefreshing = false;
+        state.isLoggedIn = true;
       })
 
       .addCase(refresh.rejected, (state) => {

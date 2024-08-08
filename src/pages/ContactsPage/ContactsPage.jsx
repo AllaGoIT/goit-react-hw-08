@@ -5,6 +5,8 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import SearchBox from "../../components/SearchBox/SearchBox";
+
 export default function ContactsPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
@@ -19,6 +21,7 @@ export default function ContactsPage() {
       <h1>Phonebook</h1>
       <ContactForm />
       <ContactList />
+      <SearchBox />
     </>
   );
 }
